@@ -3,9 +3,7 @@ package com.fingertalktalk.controller;
 import com.fingertalktalk.domain.MemberVO;
 import com.fingertalktalk.persistence.ApiMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -14,8 +12,11 @@ public class ApiController {
     private ApiMapper apiMapper;
 
     //MemberController
+    //@ReqeustBody 와 @ReqeustParam, @RequestAttribute 에 대해 공부하자
     @RequestMapping(method = RequestMethod.POST, value = "/login")
-    public MemberVO getMemberInfo(String id) {
+    public MemberVO getMemberInfo(@RequestParam String id) {
+        System.out.println(id);
+        System.out.println(apiMapper.getMemberInfo(id));
         return apiMapper.getMemberInfo(id);
     }
 
