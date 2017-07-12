@@ -14,15 +14,14 @@ public class ApiController {
     //MemberController
     //@ReqeustBody 와 @ReqeustParam, @RequestAttribute 에 대해 공부하자
     @RequestMapping(method = RequestMethod.POST, value = "/getMemberInfo")
-    public MemberVO getMemberInfo(@RequestParam String id) {
-        System.out.println(id);
-        System.out.println(apiMapper.getMemberInfo(id));
-        return apiMapper.getMemberInfo(id);
+    public MemberVO getMemberInfo(@RequestParam("member_id") String member_id) {
+        System.out.println(member_id);
+        System.out.println(apiMapper.getMemberInfo(member_id));
+        return apiMapper.getMemberInfo(member_id);
     }
 
 /*    public List<MemberVO> getMemberList() {
         return apiMapper.getMemberList();
     }
 */
-
 }

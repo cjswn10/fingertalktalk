@@ -18,7 +18,7 @@ public interface ApiMapper {
             "VALUES (#{member_id}, #{member_pw}, #{member_name}, #{member_phone})")
 
     @Select("SELECT member_id, member_pw, member_name, member_phone from member where member_id = #{id}")
-    MemberVO getMemberInfo(@Param("id") String id);
+    MemberVO getMemberInfo(@Param("member_id") String member_id);
 /*@Param 안의 "id" 는 Controller에서 Mapper를 호출할때 넣어주는 파라미터와 이름이 동일해야함*/
 /*    @Select("SELECT * from member")
     List<MemberVO> getMemberList();
