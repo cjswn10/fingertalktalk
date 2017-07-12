@@ -1,6 +1,7 @@
 package com.fingertalktalk.persistence;
 
 import com.fingertalktalk.domain.MallVO;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -18,6 +19,9 @@ public interface MallMapper {
     @Select("SELECT * from mall")
     List<MallVO> getMallList();
 
-    @Select("SELECT * from mall where mall_name = {#mall_name}")
+    @Select("SELECT * from mall where mall_name = #{mall_name}")
     MallVO getMallInfo(@Param("mall_name") String mall_name);
+
+    @Insert("INSERT into mall(mall_name, server_name, mall_img, auto_login_url, is_cafe24) values(#{mall_name}, #{server_name}, #{mall_img}, #{auto_login_url}, #{is_cafe24})")
+    boolean addMallInfo(MallVO mallVO);
 }
