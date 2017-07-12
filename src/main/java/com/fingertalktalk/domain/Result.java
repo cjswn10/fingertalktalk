@@ -9,4 +9,5 @@ import lombok.Data;
 public class Result {
     String code;
     String msg;
+    Object obj;
 }
