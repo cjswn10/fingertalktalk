@@ -20,8 +20,14 @@ public class ApiController {
         return apiMapper.getMemberInfo(member_id);
     }
 
-/*    public List<MemberVO> getMemberList() {
-        return apiMapper.getMemberList();
+    @RequestMapping(method = RequestMethod.POST, value = "/addMemberInfo")
+    public String addMemberInfo(@RequestBody MemberVO member) {
+        Boolean result = apiMapper.addMemberInfo(member);
+
+        if(result)
+            return member.getMember_name() + "님 회원가입되었습니다.";
+        else
+            return "회원가입에 실패했습니다.";
     }
-*/
+
 }
