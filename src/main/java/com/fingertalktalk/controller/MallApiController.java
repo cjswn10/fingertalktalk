@@ -24,7 +24,6 @@ public class MallApiController {
     //mall id와 일치하는 몰정보 데이턴
     @RequestMapping(method = RequestMethod.POST, value = "/getMallInfo")
     public MallVO getMallInfo(@RequestParam("mall_name") String mall_name) {
-        System.out.println(mall_name);
         return mallMapper.getMallInfo(mall_name);
     }
 
@@ -37,8 +36,8 @@ public class MallApiController {
     //몰 정보 추가
     @RequestMapping(method = RequestMethod.POST, value = "/addMallInfo")
     public Result addMallInfo(@RequestBody MallVO mallVO) {
-
         bResult = mallMapper.addMallInfo(mallVO);
+
         if(bResult) {
             result.setCode("0000");
             result.setMsg(mallVO.getMall_name() + " 몰이 새로 등록 되었습니다.");
@@ -48,14 +47,16 @@ public class MallApiController {
             result.setCode("9999");
             result.setMsg("몰정보 추가 실패");
         }
+
         return result;
     }
 
     //몰 정보 업데이트
-    @RequestMapping(method = RequestMethod.POST, value = "/updateMallInfo")
+    @RequestMapping(method = RequestMethod.POST, value = "/changeMallInfo")
     public Result updateMallInfo(@RequestBody MallVO mallVO) {
         mallVO = checkMallInfo(mallVO);
         bResult = mallMapper.updateMallInfo(mallVO);
+
         if(bResult) {
             result.setCode("0000");
             result.setMsg(mallVO.getMall_name() + "몰정보 업데이트 완료");
@@ -66,9 +67,11 @@ public class MallApiController {
             result.setCode("9999");
             result.setMsg("몰정보 업데이트 실패");
         }
+
         return result;
     }
 
+    //null 값일 경우 기존의 값으로 채워줌
     private MallVO checkMallInfo(MallVO mallVO) {
         MallVO recentMallInfo = mallMapper.getMallInfoByIdx(mallVO.getMall_idx());
         if(mallVO.getMall_name() == null)  {
