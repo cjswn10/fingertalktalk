@@ -15,7 +15,6 @@ $( document ).ready(function() {
             url:'/getMemberInfo',
             data : {member_id : id},
             success : function (result) {
-                console.log(result)
                 if(!result)
                     alert("등록되지 않은 정보입니다");
                 else

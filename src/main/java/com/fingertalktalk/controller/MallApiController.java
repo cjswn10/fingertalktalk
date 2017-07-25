@@ -86,8 +86,8 @@ public class MallApiController {
         if(mallVO.getAuto_login_url() == null) {
             mallVO.setAuto_login_url(recentMallInfo.getAuto_login_url());
         }
-        if(mallVO.getIs_cafe24() == null) {
-            mallVO.setIs_cafe24(recentMallInfo.getIs_cafe24());
+        if(mallVO.getSolution() == null) {
+            mallVO.setSolution(recentMallInfo.getSolution());
         }
         return mallVO;
     }

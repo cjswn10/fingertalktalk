@@ -12,5 +12,5 @@ public class MallVO {
     String server_name;
     String mall_img;
     String auto_login_url;
-    Boolean is_cafe24;
+    String solution;
 }
