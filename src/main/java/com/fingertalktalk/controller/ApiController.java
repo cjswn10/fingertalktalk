@@ -5,14 +5,14 @@ import com.fingertalktalk.persistence.ApiMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
+//MemberController
 @RestController
 public class ApiController {
     @Autowired
     private ApiMapper apiMapper;
+    /*@ReqeustBody 와 @ReqeustParam, @RequestAttribute 에 대해 공부하자*/
 
-    //MemberController
-    //@ReqeustBody 와 @ReqeustParam, @RequestAttribute 에 대해 공부하자
+    //member_id를 이용해 회원정보 가져오기
     @RequestMapping(method = RequestMethod.POST, value = "/getMemberInfo")
     public MemberVO getMemberInfo(@RequestParam("member_id") String member_id) {
         System.out.println(member_id);
@@ -20,15 +20,17 @@ public class ApiController {
         return apiMapper.getMemberInfo(member_id);
     }
 
+    //회원가입
     @RequestMapping(method = RequestMethod.POST, value = "/addMemberInfo")
     public String addMemberInfo(@RequestBody MemberVO member) {
         Boolean result = apiMapper.addMemberInfo(member);
         if(result)
-            return member.getMember_name() + "님 회원가입되었습니다.";
+            return member.getMember_name() + "님 회원가입 되었습니다.";
         else
             return "회원가입에 실패했습니다.";
     }
 
+    //회원정보 수정
     @RequestMapping(method = RequestMethod.POST, value = "/changeMemberInfo")
     public String changeMemberInfo(@RequestBody MemberVO member) {
         MemberVO origin = apiMapper.getMemberInfo(member.getMember_id());
@@ -44,4 +46,7 @@ public class ApiController {
             return "회원정보가 수정되었습니다.";
         else
             return "회원정보가 수정되지 않았습니다.";
-    }}
+    }
+
+    //가입유무 확인
+}
