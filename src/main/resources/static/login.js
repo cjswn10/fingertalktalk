@@ -13,9 +13,9 @@ $( document ).ready(function() {
         $.ajax({
             type:'POST',
             url:'/validateMember',
-            dataType: 'json',   //400error 써줘요
-            contentType: 'application/json',    //400error 써줘요
-            data : JSON.stringify(member_data), //400error 이렇게 써줘요
+            dataType: 'json',   //400error 해결
+            contentType: 'application/json',    //400error 해결
+            data : JSON.stringify(member_data), //400error 해결
             success : function (result) {
                 console.log(result)
                 if(result['code'] != '0000')
@@ -23,9 +23,7 @@ $( document ).ready(function() {
                 else
                     window.location.href='home.html';
             }
-
         });
+
     });
-
-
 });
