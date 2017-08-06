@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <title>핑거톡에 오신것을 환영합니다</title>
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <script src="login.js"></script>
+    <script>
+        function join() {
+            window.location.href='join.html'
+        }
+    </script>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
 
 </form>
 
-<input type="button" name="join" id="join" value="회원가입"/>
+<input type="button" id="joinBtn" onclick="join()" value="회원가입"/>
 
 </body>
 </html>

@@ -22,7 +22,7 @@ public class ApiController {
     }
 
     //회원가입
-    @RequestMapping(method = RequestMethod.POST, value = "/addMemberInfo")
+    @RequestMapping(method = RequestMethod.POST, value = "/addMember")
     public Result addMemberInfo(@RequestBody MemberVO member) {
         Boolean validation = checkId(member);
         Result result = new Result();
@@ -48,15 +48,12 @@ public class ApiController {
     @RequestMapping(method = RequestMethod.POST, value = "/checkId")
     public Boolean checkId(@RequestBody MemberVO member) {
         //가입가능
-        if(apiMapper.getMemberInfo(member.getMember_id()) == null) {
-            System.out.println("가입가능");
+        if(apiMapper.getMemberInfo(member.getMember_id()) == null)
             return true;
-        }
+
         //가입불가
-        else {
-            System.out.println("존재하는 아이디");
+        else
             return false;
-        }
     }
 
     //id와 비밀번호 일치여부
