@@ -29,7 +29,7 @@ $( document).ready(function() {
                     alert(result['msg']);
                 else {
                     alert(result['msg']);
-                    window.location.href = 'index.html';
+                    window.location.href = '../index.html';
                 }
             }
 

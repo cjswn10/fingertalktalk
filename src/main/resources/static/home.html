@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="home.css" />
+    <script src="home.js"></script>
     <title>홈</title>
 </head>
 <body>
-로그인 완료
+<div class="tab">
+    <button class="tablinks" onclick="openMenu(event, 'Delivery')">배송조회</button>
+    <button class="tablinks" onclick="openMenu(event, 'Mypage')">내정보관리</button>
+    <button class="tablinks" onclick="openMenu(event, 'MallList')">쇼핑몰리스트</button>
+</div>
+
+<div id="Delivery" class="tabcontent">
+    <h3>배송조회</h3>
+    <p>뭐 주문했게</p>
+</div>
+
+<div id="Mypage" class="tabcontent">
+    <h3>내정보관리</h3>
+    <p>누구세요</p>
+</div>
+
+<div id="MallList" class="tabcontent">
+    <h3>정혜윤바보</h3>
+
+</div>
 </body>
 </html>
