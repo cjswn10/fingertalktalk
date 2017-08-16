@@ -47,12 +47,12 @@ public class ApiController {
     //ID 중복 확인
     @RequestMapping(method = RequestMethod.POST, value = "/checkId")
     public Boolean checkId(@RequestBody MemberVO member) {
-        //가입가능
-        if(apiMapper.getMemberInfo(member.getMember_id()) == null)
-            return true;
+            //가입가능
+            if(apiMapper.getMemberInfo(member.getMember_id()) == null)
+                return true;
 
-        //가입불가
-        else
+                //가입불가
+            else
             return false;
     }
 
@@ -94,6 +94,4 @@ public class ApiController {
         else
             return "회원정보가 수정되지 않았습니다.";
     }
-
-
 }
