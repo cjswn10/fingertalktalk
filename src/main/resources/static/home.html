@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="home.css" />
     <script src="home.js"></script>
+    <script src="myMallInfo/myMallInfo.js"></script>
+    <script>
+        function MyMall() {
+            window.location.href='myMallInfo/myMallInfo.html'
+        }
+    </script>
     <title>홈</title>
 </head>
 <body>
@@ -20,6 +26,7 @@
 
 <div id="Mypage" class="tabcontent">
     <h3>내정보관리</h3>
+    <input type="button" name="addMyMallBtn" id ="addMyMallBtn" value="내 쇼핑몰 추가" onclick="MyMall()"/>
     <p>누구세요</p>
 </div>
 

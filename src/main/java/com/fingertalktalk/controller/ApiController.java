@@ -87,6 +87,8 @@ public class ApiController {
             member.setMember_name(origin.getMember_name());
         if(member.getMember_phone() == null)
             member.setMember_phone(origin.getMember_phone());
+        if(member.getMember_dep() == null)
+            member.setMember_dep(origin.getMember_dep());
 
         Boolean result = apiMapper.changeMemberInfo(member);
         if(result)
