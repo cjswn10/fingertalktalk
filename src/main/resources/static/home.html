@@ -1,31 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="home.css" />
-    <script src="home.js"></script>
+    <script src="myMallInfo/myMallInfo.js"></script>
+    <script>
+        function addGathering() {
+            window.location.href='myMallInfo/myMallInfo.html'
+        }
+    </script>
     <title>홈</title>
 </head>
-<body>
-<div class="tab">
-    <button class="tablinks" onclick="openMenu(event, 'Delivery')">배송조회</button>
-    <button class="tablinks" onclick="openMenu(event, 'Mypage')">내정보관리</button>
-    <button class="tablinks" onclick="openMenu(event, 'MallList')">쇼핑몰리스트</button>
+<body style="background-color:lightgrey">
+<!--내 메뉴-->
+<div id="private">
+    <!--내 프로필-->
+    <div id="myInfo">
+        <table style="text-align:center;">
+            <tr>
+                <td rowspan="2" style="width:100px;height:100px;">사진</td>
+                <td>임연주</td>
+            </tr>
+            <tr>
+                <td>25세,IT부서</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        내가 선택한 번개들
+        <div class="plan"><!--내번개틀-->
+            <div class="suggestion">
+                <div style="height: 70%;">
+                    <img class="circle_image">
+                    치맥할사람 여기여기 붙어라아아아아아아아~~~~~~~~~~~~
+                </div>
+                <div class="requirments" style="height: 30%">여자만</div>
+            </div>
+            <div class="answer" >
+                <div class="yes">조아</div>
+                <div class="no">시로</div>
+                <div class="postpone">기둘</div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="Delivery" class="tabcontent">
-    <h3>배송조회</h3>
-    <p>뭐 주문했게</p>
+
+<!--메뉴-->
+<div id="public">
+
+    <div class="tab">
+        <button class="tablinks" onclick="openMenu(event, 'Today')">배송조회</button>
+        <button class="tablinks" onclick="openMenu(event, 'Mypage')">내정보관리</button>
+        <button class="tablinks" onclick="openMenu(event, 'MallList')">쇼핑몰리스트</button>
+    </div>
+
+    <div id="Today" class="tabcontent">
+
+        <div class="plan"><!--번개틀-->
+            <div class="suggestion">
+                <div style="height: 70%;">
+                    <img class="circle_image">
+                    치맥할사람 여기여기 붙어라아아아아아아아~~~~~~~~~~~~
+                </div>
+                <div class="requirments" style="height: 30%">여자만</div>
+            </div>
+            <div class="answer" >
+                <div class="yes">조아</div>
+                <div class="no">시로</div>
+                <div class="postpone">기둘</div>
+            </div>
+        </div>
+
+        <div class="plan"><!--번개틀-->
+            <div class="suggestion">
+                <div style="height: 70%;">
+                    <img class="circle_image">
+                    치맥할사람 여기여기 붙어라아아아아아아아~~~~~~~~~~~~
+                </div>
+                <div class="requirments" style="height: 30%">여자만</div>
+            </div>
+            <div class="answer" >
+                <div class="yes">조아</div>
+                <div class="no">시로</div>
+                <div class="postpone">기둘</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="Mypage" class="tabcontent">
+        <h3>내정보관리</h3>
+        <input type="button" name="addGathering" id ="addGathering" value="모임추가" onclick="addGathering()"/>
+        <p>누구세요</p>
+    </div>
+
+    <div id="MallList" class="tabcontent">
+        <a href="chat/chat.html" target="_blank">채팅입장</a>
+    </div>
 </div>
 
-<div id="Mypage" class="tabcontent">
-    <h3>내정보관리</h3>
-    <p>누구세요</p>
-</div>
-
-<div id="MallList" class="tabcontent">
-    <h3>정혜윤바보</h3>
-
-</div>
+<script src="home.js"></script>
 </body>
 </html>

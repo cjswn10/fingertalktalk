@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Style the tab */
 div.tab {
     overflow: hidden;
@@ -17,12 +18,12 @@ div.tab button {
 }
 
 /* Change background color of buttons on hover */
-div.tab button:hover {
+.tab .tablinks:hover {
     background-color: #ddd;
 }
 
 /* Create an active/current tablink class */
-div.tab button.active {
+.tab .tablinks.active {
     background-color: #ccc;
 }
 
@@ -33,3 +34,93 @@ div.tab button.active {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+#private {
+    width: 30%;
+    display: inline-block;
+    float: left;
+    background-color: linen;
+}
+
+#myInfo {
+    width:300px;
+    height: 200px;
+    border: solid black 1px;
+    margin: 0 0 30px 0;
+}
+
+/*.myPlan {*/
+    /*width: 280px;*/
+    /*height: 200px;*/
+    /*background-color: linen;*/
+/*}*/
+
+#public {
+    width: 70%;
+    display: inline-block;
+    float: left;
+    background-color: aliceblue;
+}
+
+.plan {
+    margin: 0 25px 25px 0;
+    width: 350px;
+    height: 250px;
+    background-color: linen;
+}
+
+img.circle_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    alt: "사진";
+    border:solid 1px black;
+}
+
+.suggestion {
+    width: 268px;
+    height: 158px;
+    padding: 40px 40px 0px;
+    border: solid red 1px;
+}
+
+.requirments {
+    width: 250px;
+    height: 40px;
+    margin: auto;
+    border-top: solid yellow 1px;
+    font-size: 10px;
+    padding-top: 4px;
+}
+
+.answer {
+    border: solid blue 1px;
+    width: 338px;
+    height: 38px;
+    padding: 5px;
+}
+
+.yes {
+    width: 108px;
+    height: 38px;
+    border-right: solid lightblue 1px;
+    display: inline-block;
+}
+
+.no {
+    width: 108px;
+    height: 38px;
+    border-right: solid lightblue 1px;
+    display:inline-block;
+}
+
+.postpone {
+    width: 109px;
+    height: 38px;
+    display:inline-block;
+}
+
+p.h1 {
+}
+
