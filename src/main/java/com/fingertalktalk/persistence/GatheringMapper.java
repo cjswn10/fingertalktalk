@@ -19,8 +19,8 @@ public interface GatheringMapper {
     List<GatheringVO> getGatheringList();
 
     //새로운 모임 추가
-    @Insert("INSERT INTO gathering(gathering_title, gathering_host, gathering_character, gathering_date, gathering_anonymity, gathering_category, gathering_age)" +
-            "VALUES (#{gathering_title}, #{gathering_host}, #{gathering_character}, #{gathering_date}, #{gathering_anonymity}, #{gathering_category}, #{gathering_age})")
+    @Insert("INSERT INTO gathering(gathering_title, gathering_host, gathering_character, gathering_date, gathering_anonymity, gathering_category, gathering_age_start, gathering_age_end)" +
+            "VALUES (#{gathering_title}, #{gathering_host}, #{gathering_character}, #{gathering_date}, #{gathering_anonymity}, #{gathering_category}, #{gathering_age_start}, #{gathering_age_end})")
     boolean addGathering(GatheringVO newGathering);
 
 

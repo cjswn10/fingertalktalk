@@ -20,12 +20,12 @@
                     dateFormat: 'yy-mm-dd'
                 });
 
-                $('#gathering_age_1').datepicker({
-                    dateFormat: 'yy-mm'
+                $('#gathering_age_start').datepicker({
+                    dateFormat: 'yy'
                 });
 
-                $('#gathering_age_2').datepicker({
-                    dateFormat: 'yy-mm'
+                $('#gathering_age_end').datepicker({
+                    dateFormat: 'yy'
                 });
 
 //                $().datepicker();
@@ -66,8 +66,8 @@
     </select><br>
     <!--<input type="text" name="gathering_category" id="gathering_category" maxlength="40"><br>-->
     <!-- 셀렉트문으로 기본적으로 고르고 선택지에 원하는거없으면 기타 설정 후 텍스트로 입력하게-->
-    나이 : <input type="text" name="gathering_age" id="gathering_age_1" max="0000-00"> 부터
-    <input type="text" name="gathering_age" id="gathering_age_2" max="0000-00"> 까지<br>
+    나이 : <input type="text" name="gathering_age_start" id="gathering_age_start" max="0000"> 부터
+    <input type="text" name="gathering_age_end" id="gathering_age_end" max="0000"> 까지<br>
 
     <input type="button" name="addGatheringBtn" id="addGatheringBtn" value="등록">
 </form>

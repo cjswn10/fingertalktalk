@@ -14,7 +14,7 @@ public class GatheringVO {
     String gathering_date;
     String gathering_anonymity;
     String gathering_category;
-    String gathering_age;
-
+    String gathering_age_start;
+    String gathering_age_end;
 
 }

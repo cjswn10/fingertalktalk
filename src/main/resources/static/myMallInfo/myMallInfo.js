@@ -50,7 +50,7 @@ $( document).ready(function () {
 
     $('#addGatheringBtn').click(function() {
         var gathering_title = $('#gathering_title').val();
-        var gathering_host = member_id;
+        var gathering_host = 'jungmin';
         var gathering_character = $(':radio[name="gathering_character"]:checked').val();
         var gathering_date = $('#gathering_date_1').val();
         var gathering_anonymity = $(':radio[name="gathering_anonymity"]:checked').val();
@@ -58,7 +58,8 @@ $( document).ready(function () {
         var gathering_category = $('#gathering_category option:selected').val();
         // var gathering_category = $('select[name="gathering_caregory"]').val();
         // var gathering_age = $('#gathering_age_1').val();
-        var gathering_age = "12";
+        var gathering_age_start = $('#gathering_age_start').val();
+        var gathering_age_end = $('#gathering_age_end').val();
         var gathering_info = {
             'gathering_title' : gathering_title,
             'gathering_host' : gathering_host,
@@ -66,10 +67,11 @@ $( document).ready(function () {
             'gathering_date' : gathering_date,
             'gathering_anonymity' : gathering_anonymity,
             'gathering_category' : gathering_category,
-            'gathering_age' : gathering_age
+            'gathering_age_start' : gathering_age_start,
+            'gathering_age_end' : gathering_age_end,
         };
 
-        console.log(gathering_title, gathering_host, gathering_character, gathering_date, gathering_anonymity, gathering_category, gathering_age);
+        console.log(gathering_title, gathering_host, gathering_character, gathering_date, gathering_anonymity, gathering_category, gathering_age_start, gathering_age_end);
 
         $.ajax({
             type:'POST',

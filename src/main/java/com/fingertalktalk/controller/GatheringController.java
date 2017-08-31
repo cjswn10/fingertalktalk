@@ -37,7 +37,7 @@ public class GatheringController {
         System.out.println("Add New Gathering 진입");
 
         System.out.println(newGathering);
-        if(newGathering.getGathering_title() == null || newGathering.getGathering_age() == null || newGathering.getGathering_anonymity() == null || newGathering.getGathering_category() == null || newGathering.getGathering_character() == null ||newGathering.getGathering_date() == null) {
+        if(newGathering.getGathering_title() == null || newGathering.getGathering_age_start() == null || newGathering.getGathering_age_end() == null || newGathering.getGathering_anonymity() == null || newGathering.getGathering_category() == null || newGathering.getGathering_character() == null ||newGathering.getGathering_date() == null) {
             System.out.println("addGathering 실패" + newGathering.toString());
             result.setCode("9999");
             result.setMsg("새 모임 등록 실패");
@@ -51,22 +51,6 @@ public class GatheringController {
         }
 
         return result;
-
-
-
-
-//
-//        if (gResult) {
-//            result.setCode("0000");
-//            result.setMsg("새 모임 등록 완료");
-//            result.setObj(newGathering);
-//        } else {
-//            System.out.println("addGathering 실패" + newGathering.toString());
-//            result.setCode("9999");
-//            result.setMsg("새 모임 등록 실패");
-//
-//            return result;
-//        }
 
 
     }
