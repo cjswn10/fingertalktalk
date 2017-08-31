@@ -1,26 +1,25 @@
 package com.fingertalktalk.config;
 
+import com.fingertalktalk.controller.EchoHandler;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.messaging.simp.config.MessageBrokerRegistry;
-import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
-import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
-import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
-
-/**
- * Message broker에 대한 설정
- */
+import org.springframework.web.socket.WebSocketHandler;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
+import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
 @Configuration
-@EnableWebSocketMessageBroker
-public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer{
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic"); //메모리 기반 메세지 브로커가 해당 api를 구독하고 있는 클라이언트에게 메세지를 전달
-        config.setApplicationDestinationPrefixes("/app");//서버에서 클라이언트로부터의 메세지를 받을 api의 prefix를 설정
+@EnableWebSocket
+public class WebSocketConfig implements WebSocketConfigurer {
 
-    }
     @Override
-    public void registerStompEndpoints(StompEndpointRegistry registry) {//클라이언트에서 WebSocket을 연결할 api를 설정
-        registry.addEndpoint("/gs-guide-websocket").withSockJS();
+    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+        registry.addHandler(myHandler(), "/echojs").setAllowedOrigins("*").withSockJS();
     }
+
+    @Bean
+    public WebSocketHandler myHandler() {
+        return new EchoHandler();
+    }
+
 }

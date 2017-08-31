@@ -21,3 +21,30 @@ function openMenu(evt, menu) {
     document.getElementById(menu).style.display = "block";
     evt.currentTarget.className += " active";
 }
+
+
+// $ (document).ready(function () {
+//     $('#addMyMallBtn').click(function () {
+//         $.ajax({
+//             type: 'GET',
+//             url:'/getMallList',
+//             dataType: 'json',
+//             contentType: 'application/json',
+//             data : {
+//                 format: 'json',
+//             },
+//             success : function(result) {
+//                 console.log(result)
+//                 console.log("aaa");
+//
+//             }
+//
+//
+//
+//
+//         });
+//
+//
+//     });
+//
+// });

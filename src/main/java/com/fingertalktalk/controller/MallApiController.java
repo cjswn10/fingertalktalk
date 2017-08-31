@@ -20,13 +20,7 @@ public class MallApiController {
 
     private Result result = new Result();
     private Boolean bResult = false;
-    @RequestMapping("/chat")
 
-    public String viewChattingPage() {
-
-        return "chatting/chat";
-
-    }
 
     //mall id와 일치하는 몰정보 데이턴
     @RequestMapping(method = RequestMethod.POST, value = "/getMallInfo")
@@ -37,6 +31,10 @@ public class MallApiController {
     //몰 리스트 데이터
     @RequestMapping(method = RequestMethod.GET, value = "/getMallList")
     public List<MallVO> getMallList() {
+
+        List<MallVO> mallInfo = mallMapper.getMallList();
+        System.out.println("진입" + mallInfo);
+
         return mallMapper.getMallList();
     }
 

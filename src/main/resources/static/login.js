@@ -6,7 +6,7 @@ $( document ).ready(function() {
         var id = $('#id').val();
         var pwd = $('#password').val();console.log(id,pwd);
         var member_data = {
-          'member_id' : id,
+          'member_id' : id, 
             'member_pw' : pwd
         };
         //'type' : 이렇게 쓰는 방법 찾아보기
@@ -17,7 +17,7 @@ $( document ).ready(function() {
             contentType: 'application/json',    //400error 해결
             data : JSON.stringify(member_data), //400error 해결
             success : function (result) {
-                console.log(result)
+                console.log(result);
                 if(result['code'] != '0000')
                     alert(result['msg']);
                 else
