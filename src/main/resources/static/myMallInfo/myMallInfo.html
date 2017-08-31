@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>내 쇼핑몰페이지</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link href="../../jqueryUi/jquery-ui.css" rel="stylesheet">-->
+    <!--<link href="../../jqueryUi/jquery-ui.min.js" rel="stylesheet">-->
+    <!--<script src="../../jqueryUi/jquery-ui.js"></script>-->
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <!--<script type="text/javascript" src="/jqueryUi/jquery-ui.min.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+        <script src="myMallInfo.js"></script>
+        <script>
+
+            $(function () {
+                $('#gathering_date_1').datepicker({
+                    dateFormat: 'yy-mm-dd'
+                });
+
+                $('#gathering_age_1').datepicker({
+                    dateFormat: 'yy-mm'
+                });
+
+                $('#gathering_age_2').datepicker({
+                    dateFormat: 'yy-mm'
+                });
+
+//                $().datepicker();
+            });
+
+        </script>
+        <script>
+            function view() {
+                var f = document.addGathering;
+                if(f.gathering_character[0].checked==true) {
+                    document.all.cattery2.style.display="";
+                    document.all.cattery1.style.display="none";
+                } else if(f.gathering_character[1].checked==true){
+                    document.all.cattery1.style.display="";
+                    document.all.cattery2.style.display="none";
+                }
+            }
+        </script>
+
+
+</head>
+<body>
+<form id="addGathering" name="addGathering">
+    타이틀 : <input type="text" name="gathering_title" id="gathering_title" maxlength="40"><br>
+    오늘모임 <input type="radio" name="gathering_character" value="오늘모임" onclick="view()" checked>
+    정기모임 <input type="radio" name="gathering_character" value="정기모임" onclick="view()"><br>
+    모임기한 : <div id="cattery1" style="display:none"><input type="text" name="gathering_date" id="gathering_date_1"> 까지 <br>
+    </div>
+    <div id="cattery2" ><input type="time" name="gathering_date" id="gathering_date_2"> 까지 <br></div>
+    공개 <input type="radio" name="gathering_anonymity" id="gathering_anonymity_1" value="public">
+    비밀 <input type="radio" name="gathering_anonymity" id="gathering_anonymity_2" value="private"> <br>
+
+    카테고리 :
+    <select name="gathering_category" id="gathering_category">
+        <option value="밥"> 밥 </option>
+        <option value="커피"> 커피 </option>
+        <option value="술"> 술 </option>
+    </select><br>
+    <!--<input type="text" name="gathering_category" id="gathering_category" maxlength="40"><br>-->
+    <!-- 셀렉트문으로 기본적으로 고르고 선택지에 원하는거없으면 기타 설정 후 텍스트로 입력하게-->
+    나이 : <input type="text" name="gathering_age" id="gathering_age_1" max="0000-00"> 부터
+    <input type="text" name="gathering_age" id="gathering_age_2" max="0000-00"> 까지<br>
+
+    <input type="button" name="addGatheringBtn" id="addGatheringBtn" value="등록">
+</form>
+<!--<form class="mallList">-->
+
+<!--</form>-->
+
+</body>
+</html>

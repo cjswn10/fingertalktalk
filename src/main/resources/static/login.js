@@ -2,12 +2,11 @@
  * Created by YJ on 2017-07-25.
  */
 $( document ).ready(function() {
-    console.log('aaa');
     $('#loginBtn').click(function () {
         var id = $('#id').val();
         var pwd = $('#password').val();console.log(id,pwd);
         var member_data = {
-          'member_id' : id,
+          'member_id' : id, 
             'member_pw' : pwd
         };
         //'type' : 이렇게 쓰는 방법 찾아보기
