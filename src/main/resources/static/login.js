@@ -2,7 +2,6 @@
  * Created by YJ on 2017-07-25.
  */
 $( document ).ready(function() {
-    console.log('aaa');
     $('#loginBtn').click(function () {
         var id = $('#id').val();
         var pwd = $('#password').val();console.log(id,pwd);
@@ -18,7 +17,7 @@ $( document ).ready(function() {
             contentType: 'application/json',    //400error 해결
             data : JSON.stringify(member_data), //400error 해결
             success : function (result) {
-                console.log(result)
+                console.log(result);
                 if(result['code'] != '0000')
                     alert(result['msg']);
                 else
