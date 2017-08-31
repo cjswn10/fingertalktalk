@@ -10,9 +10,11 @@ public class GatheringVO {
     int gathering_id;
     String gathering_title;
     String gathering_host;
-    String gathering_category;
     String gathering_character;
-    String gathering_age;
     String gathering_date;
+    String gathering_anonymity;
+    String gathering_category;
+    String gathering_age;
+
 
 }
