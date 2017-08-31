@@ -2,6 +2,7 @@
  * Created by YJ on 2017-07-25.
  */
 $( document ).ready(function() {
+    console.log('aaa');
     $('#loginBtn').click(function () {
         var id = $('#id').val();
         var pwd = $('#password').val();console.log(id,pwd);
